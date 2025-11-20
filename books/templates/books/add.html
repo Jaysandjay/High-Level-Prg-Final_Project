@@ -1,0 +1,28 @@
+{% extends "books/layout.html" %}
+
+{% block content %}
+
+<h1>Add a Book!</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="title">Title</label>
+    <input type="text" name="title"/>
+    
+    <label for="author">Author</label>
+    <input type="text" name="author"/>
+    
+    <label for="year">Year</label>
+    <input type="text" name="year"/>
+    
+    <label for="rating">Rating</label>
+    <input type="text" name="rating"/>
+
+    <textarea name="description" placeholder="Description..."></textarea>
+
+    <button type="submit">Add</button>
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "books/layout.html" %} {% block content %}
+
+<h1>{Bookstore Name}</h1>
+<h2>BossClaw and Jaysandjay</h2>
+
+{% if books %}
+<table>
+    <thread>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Rating</th>
+        </tr>
+    </thread>
+    <tbody>
+        {% for book in books %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.rating}}</td>
+            <td><a href="{% url 'details' book.id %}">View Details</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div>
+    <h1>No Books</h1>
+</div>
+{% endif %}
+{% endblock %}
