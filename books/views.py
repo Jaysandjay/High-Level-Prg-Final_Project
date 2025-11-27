@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
-from .models import Book, User
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from .models import Book
+from .forms import BookForm
 
 def home(request):
     books = Book.objects.all()
@@ -10,59 +13,35 @@ def details(request, book_id):
     book = Book.objects.get(id=book_id)
     return render(request, "books/details.html", {'book': book})
 
-
+@login_required
 def add(request):
+    form = BookForm(request.POST)
     if request.method == 'POST':
-        book = Book(
-            title=request.POST['title'],
-            author=request.POST['author'],
-            year=request.POST['year'],
-            rating=request.POST['rating'],
-            description=request.POST['description'],
-            )
-        book.save()
-        
-    return render(request, "books/add.html")
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            form = BookForm()
+    return render(request, 'books/add.html', {'form': form})
 
 
+@login_required
 def edit(request, book_id):
     book = Book.objects.get(id=book_id)
-    return render(request, "books/edit.html", {'book': book})
+    form = BookForm(request.POST or None, instance=book)
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+    return render(request, 'books/add.html', {'form': form})
 
-
-def login(request):
-    if request.method == "POST":
-        user = User.objects.get(
-            email = request.POST.email,
-            password = request.POST.password
-            )
-        if user:
-            return redirect("home", user=user.email)
-        else:
-            return render(request, "books/login.html", {'error': True })
-
-    return render(request, "books/login.html")
-
-
-def register(request):
-    if request.method == "POST":
-        user = User(
-            email = request.POST.email,
-            password = request.POST.password
-            )
-        is_user = User.objects.get(
-            email = request.POST.email,
-            password = request.POST.password
-            )
-        
-        if is_user:
-            return render(request, "books/register.html", {'error': True } )
-        
-        else:
-            return redirect("home", {'user':user.email})
-        
-    return render(request, "books/register.html")
-
+@login_required
 def delete(request, book_id):
     book = Book.objects.get(id=book_id)
+
+    if request.method == 'POST':
+        book.delete()
+        messages.success(request, "Book deleted successfully!")
+        return redirect('home') 
     return render(request, "books/delete.html", {'book': book})
+
+
