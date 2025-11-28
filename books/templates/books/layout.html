@@ -1,30 +1,41 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'books/style.css' %}">
     <title>Bookstore</title>
-    <p>LOGIN: username:jabo password:jabo</p>
+    <!-- <p>LOGIN: username:jabo password:jabo</p> -->
 </head>
 <body>
     <nav>
         <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'add' %}">Add Book</a>
 
         {% if user.is_authenticated %}
-            <a href="{% url 'add' %}">Add Book</a>
-            <!-- TBD href=" url 'api-list'">APIs{# replace 'api-list' with your API url name #} -->
-            <span>User: {{ user.username }}!</span>
-            <form action="{% url 'logout' %}" method="post" style="display:inline;">
-                {% csrf_token %}
-                <button type="submit">Log Out</button>
-            </form>
+        <!-- TBD href=" url 'api-list'">APIs{# replace 'api-list' with your API url name #} -->
+        <span>User: {{ user.username }}!</span>
+        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Log Out</button>
+        </form>
         {% else %}
             <a href="{% url 'register' %}">Register</a>
             <a href="{% url 'login' %}">Login</a>
         {% endif %}
     </nav>
 
-    <hr/>
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+            <div class="message {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
     {% block content %}
     {% endblock %}

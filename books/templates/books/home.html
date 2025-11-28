@@ -1,19 +1,24 @@
-{% extends "books/layout.html" %} {% block content %}
+{% extends "books/layout.html" %} 
+
+{% block content %}
+<div class="home">
+
 
 <h1>{Bookstore Name}</h1>
 <h2>BossClaw and Jaysandjay</h2>
 
 {% if books %}
 <table>
-    <thread>
+    <thead>
         <tr>
             <th>#</th>
             <th>Title</th>
             <th>Author</th>
             <th>Year</th>
             <th>Rating</th>
+            <th>Details</th>
         </tr>
-    </thread>
+    </thead>
     <tbody>
         {% for book in books %}
         <tr>
@@ -32,4 +37,5 @@
     <h1>No Books</h1>
 </div>
 {% endif %}
+</div>
 {% endblock %}

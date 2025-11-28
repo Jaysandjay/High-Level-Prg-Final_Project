@@ -3,21 +3,27 @@
 {% block content %}
 
 {% if book %}
-<h1>Edit {{book.title}}</h1>
+<div class="delete">
+
+<h1>Delete {{book.title}}</h1>
 
 <div>
-    Are you sure you want to delete this book?
+    <p>Are you sure you want to delete this book?</p>
     
-    <form method="post">
+    <form method="post" class="delete-form">
         {% csrf_token %}
-        <button type="submit">Yes, delete</button>
-        <a href="{% url 'home' %}">Cancel</a>
+        <button type="submit">Yes</button>
+        <a href="{% url 'home' %}">
+            <button>Cancel</button>
+        </a>
+                
     </form>
 </div>
 
 {% else %}
 <div>
     Oops, book not found
+</div>
 </div>
 {% endif %}
 

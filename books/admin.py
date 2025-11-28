@@ -3,7 +3,7 @@ from .models import Book
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author' , 'year')
+    list_display = ('title', 'author' , 'year', 'rating')
     
 
 admin.site.register(Book, BookAdmin)

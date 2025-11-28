@@ -13,20 +13,21 @@ def details(request, book_id):
     book = Book.objects.get(id=book_id)
     return render(request, "books/details.html", {'book': book})
 
-@login_required
+@login_required(login_url='/login/')
 def add(request):
     form = BookForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
             return redirect('home')
-        else:
-            form = BookForm()
+    else:
+        form = BookForm()
     return render(request, 'books/add.html', {'form': form})
 
 
-@login_required
+@login_required(login_url='/login/')
 def edit(request, book_id):
+
     book = Book.objects.get(id=book_id)
     form = BookForm(request.POST or None, instance=book)
     if form.is_valid():
@@ -34,8 +35,9 @@ def edit(request, book_id):
         return redirect('home')
     return render(request, 'books/add.html', {'form': form})
 
-@login_required
+@login_required(login_url='/login/')
 def delete(request, book_id):
+    
     book = Book.objects.get(id=book_id)
 
     if request.method == 'POST':

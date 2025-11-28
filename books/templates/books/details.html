@@ -3,30 +3,36 @@
 {% block content %}
 
 {% if book %}
-<h1>{{book.name}}</h1>
-<h1>{{book.author}}</h1>
-<h3>{{book.year}}</h3>
-<h3>{{book.rating}}</h3>
 
+<div class="book-details">
+    <h1>{{ book.title }}</h1>
+    <h2>by {{ book.author }}</h2>
+    <p><strong>Year:</strong> {{ book.year }}</p>
+    <p><strong>Rating:</strong> {{ book.rating }}</p>
 
+    <h3>Description</h3>
+    <p>{{ book.description }}</p>
 
-<textarea>{{book.description}}</textarea>
+    <div class="actions">
+        <a href="{% url 'edit' book.id %}">
+            <button>Edit</button>   
+        </a>
 
-<div>
-    <a href="{% url 'edit' book.id %}">
-        <button>Edit</button>   
-    </a>
+        <a href="{% url 'delete' book.id %}">
+            <button>Delete</button>
+        </a>
 
-    <a href="{% url 'delete' book.id %}">
-        <button>Delete</button>
-    </a>
-
+        <a href="{% url 'home' %}">
+            <button>Back to Home</button>
+        </a>
+    </div>
 </div>
-
 {% else %}
-<div>
-    Oops, book not found
+<div class="not-found">
+    <h2>Oops, book not found.</h2>
+    <a href="{% url 'home' %}">Back to Home</a>
 </div>
+
 {% endif %}
 
 {% endblock %}

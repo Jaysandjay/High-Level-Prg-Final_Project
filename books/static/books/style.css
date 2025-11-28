@@ -1,0 +1,218 @@
+:root {
+    --prim: #211C84;
+    --sec: #4D55CC;
+    --third: #7A73D1;
+    --fourth: #B5A8D5;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: var(--sec);
+    color: white;
+}
+
+nav {
+    width: 100%;
+    background-color: var(--prim);
+    margin: 0;
+    padding: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+nav button {
+    color: white;
+    background-color: var(--sec);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    height: 35px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+nav button:hover{
+    background-color: var(--third);
+}
+
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--third);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+thead {
+    width: 100%;
+    background-color: var(--fourth);
+    color: white;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid var(--sec); /* column lines in header */
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid var(--sec); /* column and row lines */
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 500px;
+    max-width: 800px;
+    padding: 20px;
+    background-color: var(--prim);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    align-self: center;
+    justify-self: center;
+    margin-top: 50px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.actions a button {
+    height: 30px;
+    min-width: 90px;
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--fourth);
+    cursor: pointer;
+}
+
+.actions a button:hover {
+    background-color: var(--sec);
+}
+
+.add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add form {
+    background-color: var(--fourth);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.add p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+
+
+.add p label {
+    width: 150px; 
+    margin-right: 10px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.add input,
+.add textarea,
+.add select {
+    flex: 1; 
+    padding: 10px;
+    border: 1px solid var(--sec);
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.add input {
+    height: 30px;
+}
+
+.add button {
+    background-color: var(--prim);
+    color: white;
+    width: 80px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    align-self: center;
+}
+
+.add button:hover {
+    background-color: var(--sec);
+}
+
+.add .errorlist {
+    font-size: 0.8rem;   
+    margin: 5px 0 10px 0; 
+    list-style-type: none; 
+    padding-left: 0;
+    align-self: center;
+}
+
+.delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background-color: var(--third);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: 30%;
+    align-self: center;
+    justify-self: center;
+}
+
+.delete-form{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.delete-form button {
+    height: 30px;
+    min-width: 90px;
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--fourth);
+    cursor: pointer;
+    
+}
+
+.delete-form button:hover {
+    background-color: var(--sec);
+}
