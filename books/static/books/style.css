@@ -216,3 +216,55 @@ tbody td {
 .delete-form button:hover {
     background-color: var(--sec);
 }
+
+.login {
+    margin-top: 50px;
+    width: 400px;
+    justify-self: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--prim);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.login-form button {
+    height: 30px;
+    min-width: 90px;
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--fourth);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.register {
+    margin-top: 50px;
+    background-color: var(--prim);
+    justify-self: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.register a button,
+.register-form button {
+    height: 30px;
+    min-width: 90px;
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--fourth);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.register a button:hover,
+.register-form button:hover {
+    background-color: var(--third);
+}
