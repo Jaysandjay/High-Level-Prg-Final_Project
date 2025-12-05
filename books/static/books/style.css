@@ -46,6 +46,11 @@ nav button:hover{
     background-color: var(--third);
 }
 
+.layout-form {
+    margin-left: 20px;
+    margin-right: 50px;
+}
+
 .home{
     display: flex;
     flex-direction: column;
@@ -267,4 +272,67 @@ tbody td {
 .register a button:hover,
 .register-form button:hover {
     background-color: var(--third);
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-found {
+    margin-top: 50px;
+    min-width: 300px;
+    background-color: var(--third);
+    justify-self: center;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-list {
+    line-height: 25px;
+}
+
+.search-list li {
+    list-style: none;
+}
+
+.search-button {
+    height: 30px;
+    min-width: 90px;
+    padding: 5px;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background-color: var(--fourth);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.search-button:hover {
+    background-color: var(--third);
+}
+
+.search-error {
+    color: red;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between input and button */
+    margin-top: 20px;
+}
+
+.search-form input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid var(--sec);
+    border-radius: 5px;
+    width: 200px; /* adjust as needed */
 }

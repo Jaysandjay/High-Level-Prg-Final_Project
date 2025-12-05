@@ -12,3 +12,10 @@ class BookForm(forms.ModelForm):
             'rating': forms.NumberInput(attrs={'class': 'form-control', 'step': 0.1}),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
         }
+
+class SearchBookForm(forms.Form):
+    book_id = forms.IntegerField(
+        label="Enter Book ID",
+        required=True,
+        widget=forms.NumberInput(attrs={'id': 'book_id'})
+    )

@@ -13,6 +13,13 @@
     <nav>
         <a href="{% url 'home' %}">Home</a>
         <a href="{% url 'add' %}">Add Book</a>
+        <a href="{% url 'search_book' %}">Search</a>
+        <a href="{% url 'book-list' %}">Api</a>
+        <form method="get" class="layout-form">
+            <input type="number" id="book-id" placeholder="Enter Book ID">
+            <button type="button" onclick="location.href='/api/books/'+document.getElementById('book-id').value+'/'">Go</button>
+        </form>
+
 
         {% if user.is_authenticated %}
         <!-- TBD href=" url 'api-list'">APIs{# replace 'api-list' with your API url name #} -->

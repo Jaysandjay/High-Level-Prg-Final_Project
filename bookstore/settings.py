@@ -25,6 +25,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework",
+    "rest_framework.authtoken",
     "books",
     "account"
 ]
@@ -114,3 +116,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/account/login'
+
+REST_FRAMEWORK = {
+    'DEFAULT_ATHENTICATION_CLASSES': [
+        'rest_framework.athentication.SessionAuthentication',
+        'rest_framework.athentication.BasicAthentication',
+        'rest_framework.athentication.TokenAuthentication'
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated'
+    ]
+}

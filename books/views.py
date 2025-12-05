@@ -1,8 +1,9 @@
+# books/views.pys
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Book
-from .forms import BookForm
+from .forms import BookForm, SearchBookForm
 
 def home(request):
     books = Book.objects.all()
@@ -13,9 +14,30 @@ def details(request, book_id):
     book = Book.objects.get(id=book_id)
     return render(request, "books/details.html", {'book': book})
 
+def search_book(request):
+    book = None
+    id = None
+
+    # Use GET instead of POST
+    form = SearchBookForm(request.GET or None)
+
+    if form.is_valid():
+        id = form.cleaned_data['book_id']
+        try:
+            book = Book.objects.get(id=id)
+        except Book.DoesNotExist:
+            book = None
+
+    return render(request, 'books/search.html', {
+        'form': form,
+        'book': book,
+        'id': id    
+    })
+        
+
 @login_required(login_url='/login/')
 def add(request):
-    form = BookForm(request.POST)
+    form = BookForm(request.GET)
     if request.method == 'POST':
         if form.is_valid():
             form.save()
