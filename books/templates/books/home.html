@@ -1,41 +1,43 @@
-{% extends "books/layout.html" %} 
-
-{% block content %}
+{% extends "books/layout.html" %} {% block content %}
 <div class="home">
+	<h1>The JaBook Store!</h1>
+	<h2>by Jaysandjay and BossClaw</h2>
 
-
-<h1>{Bookstore Name}</h1>
-<h2>BossClaw and Jaysandjay</h2>
-
-{% if books %}
-<table>
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Year</th>
-            <th>Rating</th>
-            <th>Details</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for book in books %}
-        <tr>
-            <td>{{book.id}}</td>
-            <td>{{book.title}}</td>
-            <td>{{book.author}}</td>
-            <td>{{book.year}}</td>
-            <td>{{book.rating}}</td>
-            <td><a href="{% url 'details' book.id %}">View Details</a></td> 
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-{% else %}
-<div>
-    <h1>No Books</h1>
-</div>
-{% endif %}
+	{% if books %}
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Year</th>
+				<th>Rating</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for book in books %}
+			<tr>
+				<td>{{book.id}}</td>
+				<td>{{book.title}}</td>
+				<td>{{book.author}}</td>
+				<td>{{book.year}}</td>
+				<td>{{book.rating}}</td>
+				<td>
+					<a
+						href="{% url 'details' book.id %}"
+						class="btn btn-details"
+						>Details</a
+					>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% else %}
+	<div>
+		<h1>No Books</h1>
+	</div>
+	{% endif %}
 </div>
 {% endblock %}

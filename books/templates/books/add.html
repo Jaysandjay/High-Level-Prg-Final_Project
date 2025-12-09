@@ -1,17 +1,10 @@
-{% extends "books/layout.html" %}
-
-{% block content %}
+{% extends "books/layout.html" %} {% block content %}
 <div class="add">
+	<h1>Add a Book!</h1>
 
-
-<h1>Add a Book!</h1>
-
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Save</button>
-</form>
-
-
+	<form method="post">
+		{% csrf_token %} {{form.as_p}}
+		<button type="submit">Save</button>
+	</form>
 </div>
 {% endblock %}

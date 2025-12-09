@@ -1,32 +1,36 @@
-{% extends "books/layout.html" %}
-
-{% block content %}
+{% extends "books/layout.html" %} {% block content %}
 <div class="search">
+	<h1>Search Book by ID</h1>
 
-    <h1>Search Book by ID</h1>
+	<form
+		method="get"
+		class="search-form"
+	>
+		{{ form.as_p }}
+		<button
+			type="submit"
+			class="search-button"
+		>
+			Search
+		</button>
+	</form>
 
-    <form method="get" class="search-form">
-        {{ form.as_p }}
-        <button type="submit" class="search-button">Search</button>
-    </form>
+	{% if book %}
+	<div class="book-found">
+		<h2>Book Found:</h2>
+		<ul class="search-list">
+			<li><strong>ID:</strong> {{ book.id }}</li>
+			<li><strong>Title:</strong> {{ book.title }}</li>
+			<li><strong>Author:</strong> {{ book.author }}</li>
+			<li><strong>Year:</strong> {{ book.year }}</li>
+			<li><strong>Rating:</strong> {{ book.rating }}</li>
+			<li><strong>Description:</strong> {{ book.description }}</li>
+		</ul>
+	</div>
+	{% elif request.GET.book_id %}
 
-    {% if book %}
-    <div class="book-found">
-        <h2>Book Found:</h2>
-        <ul class="search-list">
-            <li><strong>ID:</strong> {{ book.id }}</li>
-            <li><strong>Title:</strong> {{ book.title }}</li>
-            <li><strong>Author:</strong> {{ book.author }}</li>
-            <li><strong>Year:</strong> {{ book.year }}</li>
-            <li><strong>Rating:</strong> {{ book.rating }}</li>
-            <li><strong>Description:</strong> {{ book.description }}</li>
-        </ul>
-    </div>
-    {% elif request.GET.book_id %}
+	<p class="search-error">No book found with ID {{ id }}!"</p>
 
-        <p class="search-error">No book found with ID {{ id }}!"</p>
-
-    {% endif %}
-
+	{% endif %}
 </div>
 {% endblock %}

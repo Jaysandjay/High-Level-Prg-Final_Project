@@ -1,38 +1,45 @@
-{% extends "books/layout.html" %}
-
-{% block content %}
-
-{% if book %}
+{% extends "books/layout.html" %} {% block content %} {% if book %}
 
 <div class="book-details">
-    <h1>{{ book.title }}</h1>
-    <h2>by {{ book.author }}</h2>
-    <p><strong>Year:</strong> {{ book.year }}</p>
-    <p><strong>Rating:</strong> {{ book.rating }}</p>
+	<h1>{{ book.title }}</h1>
+	<h2>by {{ book.author }}</h2>
+	<p><strong>Year:</strong> {{ book.year }}</p>
+	<p><strong>Rating:</strong> {{ book.rating }}</p>
 
-    <h3>Description</h3>
-    <p>{{ book.description }}</p>
+	<h3>Description</h3>
+	<p>{{ book.description }}</p>
 
-    <div class="actions">
-        <a href="{% url 'edit' book.id %}">
-            <button>Edit</button>   
-        </a>
+	<div>
+		<a
+			class="btn btn-info"
+			href="{% url 'edit' book.id %}"
+		>
+			Edit
+		</a>
 
-        <a href="{% url 'delete' book.id %}">
-            <button>Delete</button>
-        </a>
+		<a
+			class="btn btn-warning"
+			href="{% url 'delete' book.id %}"
+		>
+			Delete
+		</a>
 
-        <a href="{% url 'home' %}">
-            <button>Back to Home</button>
-        </a>
-    </div>
+		<a
+			class="btn btn-default"
+			href="{% url 'home' %}"
+		>
+			Home
+		</a>
+	</div>
 </div>
 {% else %}
 <div class="not-found">
-    <h2>Oops, book not found.</h2>
-    <a href="{% url 'home' %}">Back to Home</a>
+	<h2>Oops, book not found.</h2>
+	<a
+		class="btn btn-default"
+		href="{% url 'home' %}"
+		>Home</a
+	>
 </div>
 
-{% endif %}
-
-{% endblock %}
+{% endif %} {% endblock %}

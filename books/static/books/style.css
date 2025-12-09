@@ -1,338 +1,378 @@
 :root {
-    --prim: #211C84;
-    --sec: #4D55CC;
-    --third: #7A73D1;
-    --fourth: #B5A8D5;
+	--prim: #211c84;
+	--sec: #4d55cc;
+	--third: #7a73d1;
+	--fourth: #b5a8d5;
 }
 
-
 body {
-    padding: 0;
-    margin: 0;
-    height: 100%;
-    background-color: var(--sec);
-    color: white;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	background-color: var(--sec);
+	color: white;
 }
 
 nav {
-    width: 100%;
-    background-color: var(--prim);
-    margin: 0;
-    padding: 0;
-    height: 50px;
-    display: flex;
-    align-items: center;
+	width: 100%;
+	background-color: var(--prim);
+	margin: 0;
+	padding: 0;
+	height: 50px;
+	display: flex;
+	align-items: center;
+    justify-content: center;
 }
 
-nav a{
-    text-decoration: none;
-    color: white;
-    margin-left: 10px;
-    margin-right: 10px;
+nav a {
+	text-decoration: none;
+	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 nav button {
-    color: white;
-    background-color: var(--sec);
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    height: 35px;
-    margin-left: 10px;
-    cursor: pointer;
+	color: white;
+	background-color: var(--sec);
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	height: 35px;
+	margin-left: 10px;
+	cursor: pointer;
 }
 
-nav button:hover{
-    background-color: var(--third);
+nav button:hover {
+	background-color: var(--third);
 }
 
 .layout-form {
-    margin-left: 20px;
-    margin-right: 50px;
+	margin-left: 20px;
+	margin-right: 50px;
 }
 
-.home{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.home {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 table {
-    width: 80%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--third);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	width: 80%;
+	border-collapse: collapse;
+	margin: 20px 0;
+	font-family: Arial, sans-serif;
+	background-color: var(--third);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 thead {
-    width: 100%;
-    background-color: var(--fourth);
-    color: white;
+	width: 100%;
+	background-color: var(--fourth);
+	color: white;
 }
 
 thead th {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid var(--sec); /* column lines in header */
+	padding: 12px;
+	text-align: left;
+	border: 1px solid var(--sec); /* column lines in header */
 }
 
 tbody td {
-    padding: 10px;
-    border: 1px solid var(--sec); /* column and row lines */
+	padding: 10px;
+	border: 1px solid var(--sec); /* column and row lines */
 }
 
 .book-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 500px;
-    max-width: 800px;
-    padding: 20px;
-    background-color: var(--prim);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    align-self: center;
-    justify-self: center;
-    margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 500px;
+	max-width: 800px;
+	padding: 20px;
+	background-color: var(--prim);
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	align-self: center;
+	justify-self: center;
+	margin-top: 50px;
 }
 
 .actions {
-    margin-top: 20px;
-}
-
-.actions a button {
-    height: 30px;
-    min-width: 90px;
-    padding: 5px;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    background-color: var(--fourth);
-    cursor: pointer;
-}
-
-.actions a button:hover {
-    background-color: var(--sec);
+	margin-top: 20px;
 }
 
 .add {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .add form {
-    background-color: var(--fourth);
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+	background-color: var(--fourth);
+	border-radius: 15px;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
 }
 
 .add p {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    margin-right: 20px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	margin-right: 20px;
 }
 
-
 .add p label {
-    width: 150px; 
-    margin-right: 10px;
-    text-align: right;
-    font-weight: bold;
+	width: 150px;
+	margin-right: 10px;
+	text-align: right;
+	font-weight: bold;
 }
 
 .add input,
 .add textarea,
 .add select {
-    flex: 1; 
-    padding: 10px;
-    border: 1px solid var(--sec);
-    border-radius: 4px;
-    font-size: 1rem;
-    box-sizing: border-box;
+	flex: 1;
+	padding: 10px;
+	border: 1px solid var(--sec);
+	border-radius: 4px;
+	font-size: 1rem;
+	box-sizing: border-box;
 }
 
 .add input {
-    height: 30px;
+	height: 30px;
 }
 
 .add button {
-    background-color: var(--prim);
-    color: white;
-    width: 80px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    align-self: center;
+	background-color: var(--prim);
+	color: white;
+	width: 80px;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	align-self: center;
 }
 
 .add button:hover {
-    background-color: var(--sec);
+	background-color: var(--sec);
 }
 
 .add .errorlist {
-    font-size: 0.8rem;   
-    margin: 5px 0 10px 0; 
-    list-style-type: none; 
-    padding-left: 0;
-    align-self: center;
+	font-size: 0.8rem;
+	margin: 5px 0 10px 0;
+	list-style-type: none;
+	padding-left: 0;
+	align-self: center;
 }
 
 .delete {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    background-color: var(--third);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 15px;
-    padding: 20px;
-    width: 30%;
-    align-self: center;
-    justify-self: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+	background-color: var(--third);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 15px;
+	padding: 20px;
+	width: 30%;
+	align-self: center;
+	justify-self: center;
 }
 
-.delete-form{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+.delete-form {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+	gap: 10px;
 }
 
 .delete-form button {
-    height: 30px;
-    min-width: 90px;
-    padding: 5px;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    background-color: var(--fourth);
-    cursor: pointer;
-    
+	height: 30px;
+	min-width: 90px;
+	padding: 5px;
+	border: none;
+	border-radius: 15px;
+	color: white;
+	background-color: var(--fourth);
+	cursor: pointer;
 }
 
 .delete-form button:hover {
-    background-color: var(--sec);
+	background-color: var(--sec);
 }
 
 .login {
-    margin-top: 50px;
-    width: 400px;
-    justify-self: center;
-    padding: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--prim);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	margin-top: 50px;
+	width: 400px;
+	justify-self: center;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--prim);
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .login-form button {
-    height: 30px;
-    min-width: 90px;
-    padding: 5px;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    background-color: var(--fourth);
-    cursor: pointer;
-    margin-left: 20px;
+	height: 30px;
+	min-width: 90px;
+	padding: 5px;
+	border: none;
+	border-radius: 15px;
+	color: white;
+	background-color: var(--fourth);
+	cursor: pointer;
+	margin-left: 20px;
 }
 
 .register {
-    margin-top: 50px;
-    background-color: var(--prim);
-    justify-self: center;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	margin-top: 50px;
+	background-color: var(--prim);
+	justify-self: center;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .register a button,
 .register-form button {
-    height: 30px;
-    min-width: 90px;
-    padding: 5px;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    background-color: var(--fourth);
-    cursor: pointer;
-    margin-left: 20px;
+	height: 30px;
+	min-width: 90px;
+	padding: 5px;
+	border: none;
+	border-radius: 15px;
+	color: white;
+	background-color: var(--fourth);
+	cursor: pointer;
+	margin-left: 20px;
 }
 
 .register a button:hover,
 .register-form button:hover {
-    background-color: var(--third);
+	background-color: var(--third);
 }
 
-.search{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.search {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .book-found {
-    margin-top: 50px;
-    min-width: 300px;
-    background-color: var(--third);
-    justify-self: center;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-     display: flex;
-    flex-direction: column;
-    align-items: center;
+	margin-top: 50px;
+	min-width: 300px;
+	background-color: var(--third);
+	justify-self: center;
+	padding: 20px;
+	border-radius: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 .search-list {
-    line-height: 25px;
+	line-height: 25px;
 }
 
 .search-list li {
-    list-style: none;
+	list-style: none;
 }
 
 .search-button {
-    height: 30px;
-    min-width: 90px;
-    padding: 5px;
-    border: none;
-    border-radius: 15px;
-    color: white;
-    background-color: var(--fourth);
-    cursor: pointer;
-    margin-left: 20px;
+	height: 30px;
+	min-width: 90px;
+	padding: 5px;
+	border: none;
+	border-radius: 15px;
+	color: white;
+	background-color: var(--fourth);
+	cursor: pointer;
+	margin-left: 20px;
 }
 
 .search-button:hover {
-    background-color: var(--third);
+	background-color: var(--third);
 }
 
 .search-error {
-    color: red;
+	color: red;
 }
 
 .search-form {
-    display: flex;
-    align-items: center;
-    gap: 10px; /* space between input and button */
-    margin-top: 20px;
+	display: flex;
+	align-items: center;
+	gap: 10px; /* space between input and button */
+	margin-top: 20px;
 }
 
 .search-form input {
-    padding: 8px 12px;
-    font-size: 1rem;
-    border: 1px solid var(--sec);
-    border-radius: 5px;
-    width: 200px; /* adjust as needed */
+	padding: 8px 12px;
+	font-size: 1rem;
+	border: 1px solid var(--sec);
+	border-radius: 5px;
+	width: 200px; /* adjust as needed */
+}
+
+/* =============================================================================== */
+/* BUTTONS */
+
+.btn {
+	height: 48px;
+	min-width: 64px;
+	padding: 8px 24px;
+    margin-inline: 8px 8px;    
+	border: none;
+	border-radius: 15px;
+	color: white;
+	cursor: pointer;
+	transition: all;
+	transition-delay: 10ms;
+	background-color: var(--fourth);
+}
+
+a.btn {
+    text-decoration: none;
+}
+
+.btn:hover {
+	background-color: var(--sec);
+}
+
+.btn-default {
+	background-color: yellowgreen;
+}
+
+.btn-default:hover {
+	background-color: yellow;
+}
+
+.btn-warning {
+	background-color: orange;
+}
+
+.btn-warning:hover {
+	background-color: orangered;
+}
+
+.btn-success {
+	background-color: green;
+}
+
+.btn-success:hover {
+	background-color: greenyellow;
+}
+
+.btn-info {
+	background-color: #4d55cc;
+}
+
+.btn-info:hover {
+	background-color: #7a73d1;
 }
