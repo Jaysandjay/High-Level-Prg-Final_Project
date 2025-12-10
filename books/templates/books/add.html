@@ -1,10 +1,24 @@
 {% extends "books/layout.html" %} {% block content %}
 <div class="add">
-	<h1>Add a Book!</h1>
+	<h1>{% if is_edit %}Edit a Book!{% else %}Add a Book!{% endif %}</h1>
 
 	<form method="post">
 		{% csrf_token %} {{form.as_p}}
-		<button type="submit">Save</button>
+
+		<div class="bar-buttons">
+			<button
+				class="btn btn-info"
+				type="submit"
+			>
+				Save
+			</button>
+			<a
+				class="btn btn-warning"
+				href="{% url 'home' %}"
+			>
+				Cancel
+			</a>
+		</div>
 	</form>
 </div>
 {% endblock %}

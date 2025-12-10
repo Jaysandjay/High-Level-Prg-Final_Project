@@ -78,7 +78,7 @@ def edit(request, book_id):
     if form.is_valid():
         form.save()
         return redirect('home')
-    return render(request, 'books/add.html', {'form': form})
+    return render(request, 'books/add.html', {'form': form, 'is_edit': True})
 
 
 @login_required(login_url='/login/')

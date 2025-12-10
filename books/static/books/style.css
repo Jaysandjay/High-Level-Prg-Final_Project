@@ -21,7 +21,7 @@ nav {
 	height: 50px;
 	display: flex;
 	align-items: center;
-    justify-content: center;
+	justify-content: center;
 }
 
 nav a {
@@ -145,22 +145,6 @@ tbody td {
 	height: 30px;
 }
 
-.add button {
-	background-color: var(--prim);
-	color: white;
-	width: 80px;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	font-size: 1rem;
-	cursor: pointer;
-	align-self: center;
-}
-
-.add button:hover {
-	background-color: var(--sec);
-}
-
 .add .errorlist {
 	font-size: 0.8rem;
 	margin: 5px 0 10px 0;
@@ -218,18 +202,6 @@ tbody td {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.login-form button {
-	height: 30px;
-	min-width: 90px;
-	padding: 5px;
-	border: none;
-	border-radius: 15px;
-	color: white;
-	background-color: var(--fourth);
-	cursor: pointer;
-	margin-left: 20px;
-}
-
 .register {
 	margin-top: 50px;
 	background-color: var(--prim);
@@ -237,24 +209,6 @@ tbody td {
 	padding: 20px;
 	border-radius: 15px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.register a button,
-.register-form button {
-	height: 30px;
-	min-width: 90px;
-	padding: 5px;
-	border: none;
-	border-radius: 15px;
-	color: white;
-	background-color: var(--fourth);
-	cursor: pointer;
-	margin-left: 20px;
-}
-
-.register a button:hover,
-.register-form button:hover {
-	background-color: var(--third);
 }
 
 .search {
@@ -323,22 +277,40 @@ tbody td {
 /* =============================================================================== */
 /* BUTTONS */
 
+.bar-buttons {
+	width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 10px;
+	margin-top: 20px;
+}
+
 .btn {
 	height: 48px;
 	min-width: 64px;
 	padding: 8px 24px;
-    margin-inline: 8px 8px;    
+	margin-inline: 8px 8px;
 	border: none;
 	border-radius: 15px;
 	color: white;
 	cursor: pointer;
 	transition: all;
+	box-sizing: border-box;
+	font-size: 1rem;
 	transition-delay: 10ms;
+	line-height: 1;
 	background-color: var(--fourth);
+	font-family: sans-serif;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 a.btn {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .btn:hover {
