@@ -8,8 +8,18 @@ class BookForm(forms.ModelForm):
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'author': forms.TextInput(attrs={'class': 'form-control'}),
-            'year': forms.NumberInput(attrs={'class': 'form-control'}),
-            'rating': forms.NumberInput(attrs={'class': 'form-control', 'step': 0.1}),
+            'year': forms.NumberInput(attrs={
+                'class': 'form-control',
+                'min': 1000,
+                'max': 9999,
+                'placeholder': 'e.g., 2024'
+            }),
+            'rating': forms.NumberInput(attrs={
+                'class': 'form-control',
+                'min': 1,
+                'max': 10,
+                'placeholder': 'Enter 1-10'
+            }),
             'description': forms.Textarea(attrs={'class': 'form-control', 'rows': 4}),
         }
 

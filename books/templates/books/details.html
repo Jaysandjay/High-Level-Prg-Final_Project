@@ -5,11 +5,15 @@
 	<h2>by {{ book.author }}</h2>
 	<p><strong>Year:</strong> {{ book.year }}</p>
 	<p><strong>Rating:</strong> {{ book.rating }}</p>
+	{% if book.created_by %}
+	<p><strong>Created by:</strong> {{ book.created_by.username }}</p>
+	{% endif %}
 
 	<h3>Description</h3>
 	<p>{{ book.description }}</p>
 
 	<div>
+		{% if user.is_authenticated and user == book.created_by %}
 		<a
 			class="btn btn-info"
 			href="{% url 'edit' book.id %}"
@@ -23,6 +27,7 @@
 		>
 			Delete
 		</a>
+		{% endif %}
 
 		<a
 			class="btn btn-default"

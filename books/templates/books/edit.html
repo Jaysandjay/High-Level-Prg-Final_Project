@@ -1,21 +1,11 @@
-{% extends "books/layout.html" %}
-
-{% block content %}
-
-{% if book %}
+{% extends "books/layout.html" %} {% block content %} {% if book %}
 <h1>Edit {{book.title}}</h1>
 
 <form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Save</button>
+	{% csrf_token %} {{form.as_p}}
+	<button type="submit">Save</button>
 </form>
 
 {% else %}
-<div>
-    Oops, book not found
-</div>
-{% endif %}
-
-
-{% endblock %}
+<div>Oops, book not found</div>
+{% endif %} {% endblock %}

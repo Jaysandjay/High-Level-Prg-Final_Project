@@ -50,16 +50,16 @@ def search_book(request):
 @login_required(login_url='/login/')
 def add(request):
 
-    # DEFAULT ASSIGN FORM
-    form = BookForm(request.POST)
-    
     # HANDLE IF POST
     if request.method == 'POST':
+        form = BookForm(request.POST)
         if form.is_valid():
-            form.save()
+            book = form.save(commit=False)
+            book.created_by = request.user
+            book.save()
             return redirect('home')
-        else:
-            form = BookForm()
+    else:
+        form = BookForm()
 
     return render(request, 'books/add.html', {'form': form})
 
@@ -68,6 +68,12 @@ def add(request):
 def edit(request, book_id):
 
     book = Book.objects.get(id=book_id)
+
+    # CHECK IF USER IS THE OWNER
+    if book.created_by != request.user:
+        messages.error(request, "You are not authorized to edit this book.")
+        return redirect('home')
+
     form = BookForm(request.POST or None, instance=book)
     if form.is_valid():
         form.save()
@@ -79,6 +85,11 @@ def edit(request, book_id):
 def delete(request, book_id):
 
     book = Book.objects.get(id=book_id)
+
+    # CHECK IF USER IS THE OWNER
+    if book.created_by != request.user:
+        messages.error(request, "You are not authorized to delete this book.")
+        return redirect('home')
 
     if request.method == 'POST':
         book.delete()
